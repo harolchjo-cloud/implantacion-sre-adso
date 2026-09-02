@@ -7,7 +7,7 @@ def get_connection():
     return mysql.connector.connect(
         host=os.environ.get("DB_HOST", "db"),
         user=os.environ.get("DB_USER", "root"),
-        password=os.environ.get("DB_PASSWORD", "rootpass"),
+        password="SuperClave123",
         database=os.environ.get("DB_NAME", "proyecto_db")
     )
 @app.route("/")
