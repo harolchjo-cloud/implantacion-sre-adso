@@ -1,39 +1,59 @@
 name: CI/CD Pipeline
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Install dependencies
         working-directory: ./app
         run: pip install -r requirements.txt
-
       - name: Run Pytest
         working-directory: ./app
         run: pytest -v
 
-  deploy:
+  security:
     needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Bandit
+        run: pip install bandit
+      - name: Run Bandit (SAST)
+        working-directory: ./app
+        run: bandit -r . -ll --exclude ./venv
+      - name: Build Docker image
+        working-directory: ./app
+        run: docker build -t implantacion-sre-adso:scan .
+      - name: Run Trivy (Container Scanning)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'implantacion-sre-adso:scan'
+          format: 'table'
+          exit-code: '1'
+          severity: 'CRITICAL,HIGH'
+
+  deploy:
+    needs: security
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
