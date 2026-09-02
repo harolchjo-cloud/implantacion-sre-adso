@@ -1,0 +1,135 @@
+
+Report Summary
+
+┌──────────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
+│                                      Target                                      │    Type    │ Vulnerabilities │ Secrets │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ mi-api-local:test (debian 13.6)                                                  │   debian   │       19        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/blinker-1.9.0.dist-info/METADATA          │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/click-8.5.0.dist-info/METADATA            │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/flask-3.0.3.dist-info/METADATA            │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/itsdangerous-2.2.0.dist-info/METADATA     │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/jinja2-3.1.6.dist-info/METADATA           │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/markupsafe-3.0.3.dist-info/METADATA       │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/mysql/opentelemetry/_dist_info/opentelem- │ python-pkg │        0        │    -    │
+│ etry_api-1.18.0.dist-info/METADATA                                               │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/mysql/opentelemetry/_dist_info/opentelem- │ python-pkg │        0        │    -    │
+│ etry_sdk-1.18.0.dist-info/METADATA                                               │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/mysql/opentelemetry/_dist_info/opentelem- │ python-pkg │        0        │    -    │
+│ etry_semantic_conventions-0.39b0.dist-info/METADATA                              │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/mysql_connector_python-8.4.0.dist-info/M- │ python-pkg │        1        │    -    │
+│ ETADATA                                                                          │            │                 │         │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA             │ python-pkg │        0        │    -    │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+│ usr/local/lib/python3.12/site-packages/werkzeug-3.1.8.dist-info/METADATA         │ python-pkg │        0        │    -    │
+└──────────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+mi-api-local:test (debian 13.6)
+===============================
+Total: 19 (HIGH: 16, CRITICAL: 3)
+
+┌─────────────────────────┬────────────────┬──────────┬──────────────┬───────────────────┬─────────────────┬──────────────────────────────────────────────────────────────┐
+│         Library         │ Vulnerability  │ Severity │    Status    │ Installed Version │  Fixed Version  │                            Title                             │
+├─────────────────────────┼────────────────┼──────────┼──────────────┼───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ gzip                    │ CVE-2026-41992 │ HIGH     │ affected     │ 1.13-1            │                 │ GNU gzip contains a global buffer overflow vulnerability in  │
+│                         │                │          │              │                   │                 │ the LZH de...                                                │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-41992                   │
+├─────────────────────────┼────────────────┤          │              ├───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ libacl1                 │ CVE-2026-54369 │          │              │ 2.3.2-2+b1        │                 │ acl: Symlink traversal privilege escalation via libacl       │
+│                         │                │          │              │                   │                 │ functions                                                    │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-54369                   │
+├─────────────────────────┼────────────────┤          │              ├───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ libncursesw6            │ CVE-2025-69720 │          │              │ 6.5+20250216-2    │                 │ ncurses: ncurses: Buffer overflow vulnerability may lead to  │
+│                         │                │          │              │                   │                 │ arbitrary code execution.                                    │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2025-69720                   │
+├─────────────────────────┼────────────────┤          │              ├───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ libsqlite3-0            │ CVE-2026-11822 │          │              │ 3.46.1-7+deb13u1  │                 │ sqlite: SQLite: Arbitrary code execution via crafted FTS5    │
+│                         │                │          │              │                   │                 │ full-text search data                                        │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-11822                   │
+│                         ├────────────────┤          │              │                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-11824 │          │              │                   │                 │ sqlite: SQLite: Arbitrary code execution and crash via       │
+│                         │                │          │              │                   │                 │ heap-based buffer overflow in...                             │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-11824                   │
+├─────────────────────────┼────────────────┤          ├──────────────┼───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ libssl3t64              │ CVE-2026-14456 │          │ fixed        │ 3.5.6-1~deb13u2   │ 3.5.7-1~deb13u2 │ openssl: OpenSSL: Denial of Service via unbounded memory     │
+│                         │                │          │              │                   │                 │ growth in QUIC server...                                     │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-14456                   │
+├─────────────────────────┼────────────────┤          ├──────────────┼───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ libtinfo6               │ CVE-2025-69720 │          │ affected     │ 6.5+20250216-2    │                 │ ncurses: ncurses: Buffer overflow vulnerability may lead to  │
+│                         │                │          │              │                   │                 │ arbitrary code execution.                                    │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2025-69720                   │
+├─────────────────────────┤                │          │              │                   ├─────────────────┤                                                              │
+│ ncurses-base            │                │          │              │                   │                 │                                                              │
+│                         │                │          │              │                   │                 │                                                              │
+│                         │                │          │              │                   │                 │                                                              │
+├─────────────────────────┤                │          │              │                   ├─────────────────┤                                                              │
+│ ncurses-bin             │                │          │              │                   │                 │                                                              │
+│                         │                │          │              │                   │                 │                                                              │
+│                         │                │          │              │                   │                 │                                                              │
+├─────────────────────────┼────────────────┤          ├──────────────┼───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ openssl                 │ CVE-2026-14456 │          │ fixed        │ 3.5.6-1~deb13u2   │ 3.5.7-1~deb13u2 │ openssl: OpenSSL: Denial of Service via unbounded memory     │
+│                         │                │          │              │                   │                 │ growth in QUIC server...                                     │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-14456                   │
+├─────────────────────────┤                │          │              │                   │                 │                                                              │
+│ openssl-provider-legacy │                │          │              │                   │                 │                                                              │
+│                         │                │          │              │                   │                 │                                                              │
+│                         │                │          │              │                   │                 │                                                              │
+├─────────────────────────┼────────────────┼──────────┼──────────────┼───────────────────┼─────────────────┼──────────────────────────────────────────────────────────────┤
+│ perl-base               │ CVE-2026-13221 │ CRITICAL │ affected     │ 5.40.1-6          │                 │ perl: Perl: Incorrect regular expression processing via      │
+│                         │                │          │              │                   │                 │ large regular expressions                                    │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-13221                   │
+│                         ├────────────────┤          ├──────────────┤                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-42496 │          │ fix_deferred │                   │                 │ perl-archive-tar: perl-archive-tar: Path traversal via       │
+│                         │                │          │              │                   │                 │ crafted symlinks allows arbitrary file access                │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-42496                   │
+│                         ├────────────────┤          ├──────────────┤                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-8376  │          │ affected     │                   │                 │ perl: Perl: Heap buffer overflow when compiling regular      │
+│                         │                │          │              │                   │                 │ expressions on 32-bit builds...                              │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-8376                    │
+│                         ├────────────────┼──────────┼──────────────┤                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-42497 │ HIGH     │ fix_deferred │                   │                 │ perl-Archive-Tar: perl-Archive-Tar: Arbitrary file           │
+│                         │                │          │              │                   │                 │ modification via crafted hardlinks during archive extraction │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-42497                   │
+│                         ├────────────────┤          ├──────────────┤                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-48962 │          │ affected     │                   │                 │ perl-IO-Compress: perl-IO-Compress: Arbitrary code execution │
+│                         │                │          │              │                   │                 │ via attacker-controlled output glob                          │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-48962                   │
+│                         ├────────────────┤          │              │                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-57432 │          │              │                   │                 │ perl: Perl: Information disclosure via integer overflow in   │
+│                         │                │          │              │                   │                 │ pack/unpack operations                                       │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-57432                   │
+│                         ├────────────────┤          │              │                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-57433 │          │              │                   │                 │ Storable: Storable: Denial of Service via signed integer     │
+│                         │                │          │              │                   │                 │ overflow in deserialization                                  │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-57433                   │
+│                         ├────────────────┤          ├──────────────┤                   ├─────────────────┼──────────────────────────────────────────────────────────────┤
+│                         │ CVE-2026-9538  │          │ fix_deferred │                   │                 │ perl-Archive-Tar: perl-Archive-Tar: Denial of Service via    │
+│                         │                │          │              │                   │                 │ crafted tar header with large entry...                       │
+│                         │                │          │              │                   │                 │ https://avd.aquasec.com/nvd/cve-2026-9538                    │
+└─────────────────────────┴────────────────┴──────────┴──────────────┴───────────────────┴─────────────────┴──────────────────────────────────────────────────────────────┘
+
+Python (python-pkg)
+===================
+Total: 1 (HIGH: 1, CRITICAL: 0)
+
+┌───────────────────────────────────┬────────────────┬──────────┬────────┬───────────────────┬───────────────┬─────────────────────────────────────────────────────────┐
+│              Library              │ Vulnerability  │ Severity │ Status │ Installed Version │ Fixed Version │                          Title                          │
+├───────────────────────────────────┼────────────────┼──────────┼────────┼───────────────────┼───────────────┼─────────────────────────────────────────────────────────┤
+│ mysql-connector-python (METADATA) │ CVE-2024-21272 │ HIGH     │ fixed  │ 8.4.0             │ 9.1.0         │ MySQL Connector/Python connector takeover vulnerability │
+│                                   │                │          │        │                   │               │ https://avd.aquasec.com/nvd/cve-2024-21272              │
+└───────────────────────────────────┴────────────────┴──────────┴────────┴───────────────────┴───────────────┴─────────────────────────────────────────────────────────┘

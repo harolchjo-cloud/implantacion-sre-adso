@@ -1,0 +1,45 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: proyecto_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - red_proyecto
+  api:
+    build: ./app
+    container_name: proyecto_api
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    depends_on:
+      - db
+    networks:
+      - red_proyecto
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx_proxy_manager
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "81:81"
+    volumes:
+      - npm_data:/data
+      - npm_letsencrypt:/etc/letsencrypt
+    networks:
+      - red_proyecto
+networks:
+  red_proyecto:
+    driver: bridge
+volumes:
+  db_data:
+  npm_data:
+  npm_letsencrypt:
